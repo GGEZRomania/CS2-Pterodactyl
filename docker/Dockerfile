@@ -15,6 +15,10 @@ WORKDIR     /home/container
 # RUN         apt update
 # RUN         apt install -y wine wine64 libwine && apt clean
 
+# Libs
+RUN        apt update
+RUN        apt install -y libstdc++6
+
 # EP
 COPY        ./docker/entrypoint.sh /entrypoint.sh
 CMD         [ "/bin/bash", "/entrypoint.sh" ]
