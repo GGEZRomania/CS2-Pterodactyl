@@ -4,6 +4,10 @@ FROM        registry.gitlab.steamos.cloud/steamrt/sniper/platform
 LABEL       author="Liam C" maintainer="infra@gflclan.com"
 LABEL       org.opencontainers.image.source="https://github.com/1zc/cs2-pterodactyl"
 
+# Libs
+RUN        apt update
+RUN        apt install -y libstdc++6
+
 # Prep OS
 RUN         mkdir -p /etc/sudoers.d && echo "%sudo ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/flatdeb && chmod 0440 /etc/sudoers.d/flatdeb
 ENV         DEBIAN_FRONTEND=noninteractive
@@ -14,10 +18,6 @@ WORKDIR     /home/container
 # To-Do: If CS2 requires Wine, the following lines will need to be uncommented
 # RUN         apt update
 # RUN         apt install -y wine wine64 libwine && apt clean
-
-# Libs
-RUN        apt update
-RUN        apt install -y libstdc++6
 
 # EP
 COPY        ./docker/entrypoint.sh /entrypoint.sh
