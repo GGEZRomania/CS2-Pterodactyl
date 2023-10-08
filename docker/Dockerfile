@@ -5,8 +5,8 @@ LABEL       author="Liam C" maintainer="infra@gflclan.com"
 LABEL       org.opencontainers.image.source="https://github.com/1zc/cs2-pterodactyl"
 
 # Libs
-RUN        apt update
-# RUN        apt install -y libmysqlclient21
+RUN        apt-get update
+RUN        apt-get install -y libzstd1
 
 # Prep OS
 RUN         mkdir -p /etc/sudoers.d && echo "%sudo ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/flatdeb && chmod 0440 /etc/sudoers.d/flatdeb
