@@ -6,7 +6,7 @@ LABEL       org.opencontainers.image.source="https://github.com/1zc/cs2-pterodac
 
 # Libs
 RUN        apt-get update
-RUN        apt-get install -y zlib1g libzstd1 libmariadb3
+RUN        apt-get install -y libmariadb-dev libzstd-dev zlib1g-dev
 
 # MariaDB c++ connector
 RUN wget https://dlm.mariadb.com/2531499/Connectors/cpp/connector-cpp-1.0.2/mariadb-connector-cpp-1.0.2-debian-bullseye-amd64.tar.gz
