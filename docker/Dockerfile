@@ -9,6 +9,7 @@ RUN        apt-get update
 RUN        apt-get install -y libmariadb-dev libzstd-dev zlib1g-dev
 
 # MariaDB c++ connector
+WORKDIR /tmp
 RUN wget https://dlm.mariadb.com/2531499/Connectors/cpp/connector-cpp-1.0.2/mariadb-connector-cpp-1.0.2-debian-bullseye-amd64.tar.gz
 RUN tar -xvzf mariadb-connector-cpp-*.tar.gz
 RUN install -d /usr/include/mariadb/conncpp
