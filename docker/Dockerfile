@@ -6,7 +6,7 @@ LABEL       org.opencontainers.image.source="https://github.com/1zc/cs2-pterodac
 
 # Libs
 RUN        apt-get update
-RUN        apt-get install -y libzstd-dev zlib1g-dev libmysqlcppconn-dev
+RUN        apt-get install -y libzstd-dev zlib1g-dev
 
 # MariaDB c++ connector
 # WORKDIR /tmp
